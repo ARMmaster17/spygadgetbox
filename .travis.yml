@@ -21,12 +21,8 @@ addons:
 install:
   - bundle install
 script:
-  - echo 'Configuring JIT variables...'
-  - sed 's/TRAVISCOMMIT/'$TRAVIS_COMMIT'/' builddata.partial.rb > builddata.partial2.rb
-  - sed 's/TRAVISBUILD/'$TRAVIS_BUILD_NUMBER'/' builddata.partial2.rb > inc/builddata.rb
-  - head ./inc/builddata.rb
-  # Begin testing
-  - echo 'Beginning unit tests...'
+  - chmod +x ./build/build.sh
+  - ./build/build.sh
   - rake test --trace
 deploy:
   provider: heroku
