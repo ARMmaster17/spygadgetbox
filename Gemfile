@@ -1,4 +1,9 @@
+source 'https://rubygems.org'
+
+ruby "2.2.1"
+
 gem 'sinatra'
 gem 'slim'
 gem 'puma'
-gem 'codeclimate-test-reporter'
+gem "rack-test"
+gem "codeclimate-test-reporter", group: :test, require: nil
