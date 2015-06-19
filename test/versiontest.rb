@@ -12,4 +12,8 @@ class TestVersion < Test::Unit::TestCase
     get '/'
     assert last_response.ok?
   end
+  def test_gamespycase
+    get '/ultimatespycase'
+    assert last_response.ok?
+  end
 end
